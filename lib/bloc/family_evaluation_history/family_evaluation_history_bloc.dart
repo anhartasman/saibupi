@@ -16,7 +16,10 @@ class FamilyEvaluationHistoryBloc extends Bloc<FamilyEvaluationHistoryBlocEvent,
         emit(FamilyEvaluationHistoryOnStarted());
         final failureOrTrivia = await familyEvaluationHistoryUseCase(
             FamilyEvaluationHistoryUseCaseParam(
-                event.firstDate, event.lastDate));
+          event.firstDate,
+          event.lastDate,
+          event.childId,
+        ));
 
         try {
           var resultList = await failureOrTrivia.first;

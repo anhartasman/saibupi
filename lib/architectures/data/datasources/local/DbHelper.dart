@@ -174,14 +174,15 @@ class DbHelper {
   }
 
   Future<List<FamilyEvaluation>> selectFamilyEvaluationByDateRange(
-      String firstDate, String lastDate) async {
+      String firstDate, String lastDate,int childId,) async {
     final db = await initDb();
     final result = await db.query(
       EvaluationQuery.TABLE_NAME,
-      where: "date >= ? and date <= ? ",
+      where: "date >= ? and date <= ? and childId=?",
       whereArgs: [
         firstDate,
         lastDate,
+        childId,
       ],
       orderBy: 'id',
     );

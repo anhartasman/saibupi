@@ -81,12 +81,12 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Expanded(
                       child: InkWell(
-                        onTap: () => Get.to(read_tips_solusi()),
+                        onTap: () => Get.to(read_penggunaan_gadget()),
                         child: Container(
                             margin: EdgeInsets.only(right: 8),
                             padding: EdgeInsets.all(8.0),
                             decoration: BoxDecoration(
-                              color: Color(0xFFF8C7AE),
+                              color: Color(0xFFAEDBF8),
                               borderRadius: BorderRadius.circular(15.0),
                             ),
                             child: Stack(
@@ -94,10 +94,10 @@ class _HomePageState extends State<HomePage> {
                                 Align(
                                     alignment: Alignment.centerRight,
                                     child: Image.asset(
-                                        "assets/images/book_lover.png")),
+                                        "assets/images/online_tech.png")),
                                 Padding(
                                   padding: const EdgeInsets.only(right: 16.0),
-                                  child: Text("Tips & Solusi",
+                                  child: Text("Pemanfaatan Gadget",
                                       style: TextStyle(
                                         fontFamily: 'Montserrat',
                                         fontSize: 18,
@@ -121,12 +121,12 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Expanded(
                       child: InkWell(
-                        onTap: () => Get.to(read_penggunaan_gadget()),
+                        onTap: () => Get.to(read_tips_solusi()),
                         child: Container(
                             margin: EdgeInsets.only(right: 8),
                             padding: EdgeInsets.all(8.0),
                             decoration: BoxDecoration(
-                              color: Color(0xFFAEDBF8),
+                              color: Color(0xFFF8C7AE),
                               borderRadius: BorderRadius.circular(15.0),
                             ),
                             child: Stack(
@@ -134,10 +134,10 @@ class _HomePageState extends State<HomePage> {
                                 Align(
                                     alignment: Alignment.centerRight,
                                     child: Image.asset(
-                                        "assets/images/online_tech.png")),
+                                        "assets/images/book_lover.png")),
                                 Padding(
                                   padding: const EdgeInsets.only(right: 16.0),
-                                  child: Text("Pemanfaatan Gadget",
+                                  child: Text("Tips & Solusi",
                                       style: TextStyle(
                                         fontFamily: 'Montserrat',
                                         fontSize: 18,

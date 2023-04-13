@@ -7,5 +7,8 @@ abstract class FamilyRepository {
   Future<FamilyMember> memberDetail(int id);
   Future<void> saveEvaluation(FamilyEvaluation theEvaluation);
   Future<List<FamilyEvaluation>> evaluationResult(
-      String firstDate, String lastDate);
+    String firstDate,
+    String lastDate,
+    int childId,
+  );
 }

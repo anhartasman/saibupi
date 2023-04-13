@@ -87,8 +87,10 @@ final appPages = [
               create: (BuildContext context) =>
                   di.sl<FamilyEvaluationHistoryBloc>()
                     ..add(FamilyEvaluationHistoryBlocStart(
-                        firstDate.toTanggal("yyyy-MM-dd"),
-                        lastDate.toTanggal("yyyy-MM-dd")))),
+                      firstDate.toTanggal("yyyy-MM-dd"),
+                      lastDate.toTanggal("yyyy-MM-dd"),
+                      childId,
+                    ))),
         ],
         child: evaluation_history(
           childId: childId,

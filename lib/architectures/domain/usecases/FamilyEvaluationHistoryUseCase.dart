@@ -18,7 +18,11 @@ class FamilyEvaluationHistoryUseCase extends UseCase<List<FamilyEvaluation>,
         StreamController();
 
     repository
-        .evaluationResult(param.firstDate, param.lastDate)
+        .evaluationResult(
+      param.firstDate,
+      param.lastDate,
+      param.childId,
+    )
         .then((the_respon) {
       controller.add((the_respon));
 
@@ -37,5 +41,10 @@ class FamilyEvaluationHistoryUseCase extends UseCase<List<FamilyEvaluation>,
 class FamilyEvaluationHistoryUseCaseParam {
   final String firstDate;
   final String lastDate;
-  const FamilyEvaluationHistoryUseCaseParam(this.firstDate, this.lastDate);
+  final int childId;
+  const FamilyEvaluationHistoryUseCaseParam(
+    this.firstDate,
+    this.lastDate,
+    this.childId,
+  );
 }

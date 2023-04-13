@@ -6,5 +6,10 @@ class FamilyEvaluationHistoryBlocStart
     extends FamilyEvaluationHistoryBlocEvent {
   final String firstDate;
   final String lastDate;
-  FamilyEvaluationHistoryBlocStart(this.firstDate, this.lastDate);
+  final int childId;
+  FamilyEvaluationHistoryBlocStart(
+    this.firstDate,
+    this.lastDate,
+    this.childId,
+  );
 }
