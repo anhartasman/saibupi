@@ -94,9 +94,9 @@ class evaluation_child_page extends StatelessWidget {
                                 memberList.length > 1 ? memberList.length : 10,
                           );
                           var colors2 = RandomColor.getColor(options2);
-                          for (final color in colors) {
-                            print("warna " + color.toString());
-                          }
+                          // for (final color in colors) {
+                          //   print("warna " + color.toString());
+                          // }
 
                           return Column(
                             children: List.generate(jumColumn, (index) {
