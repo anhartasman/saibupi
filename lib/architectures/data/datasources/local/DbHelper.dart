@@ -1,11 +1,13 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:saibupi/architectures/data/datasources/local/queries/EvaluationQuery.dart';
 import 'package:saibupi/architectures/data/datasources/local/queries/MemberQuery.dart';
 import 'package:saibupi/architectures/domain/entities/FamilyEvaluation.dart';
 import 'package:saibupi/architectures/domain/entities/FamilyMember.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
+import 'package:sqflite_common_ffi_web/sqflite_ffi_web.dart';
 
 class DbHelper {
   //membuat method singleton
@@ -26,12 +28,29 @@ class DbHelper {
 
   Future<Database> initDb() async {
     //untuk menentukan nama database dan lokasi yg dibuat
-    Directory directory = await getApplicationDocumentsDirectory();
-    String path = directory.path + 'contact.db';
-
+    String path = "";
+    if (kIsWeb) {
+      path = 'santriku.db';
+    } else {
+      Directory directory = await getApplicationDocumentsDirectory();
+      path = directory.path + 'contact.db';
+    }
     //create, read databases
-    var todoDatabase = openDatabase(path,
-        version: 4, onCreate: _createDb, onUpgrade: _onUpgradeDB);
+    var factory = databaseFactoryFfiWeb;
+    late Future<Database> todoDatabase;
+    if (kIsWeb) {
+      todoDatabase = factory.openDatabase(
+        path,
+        options: OpenDatabaseOptions(
+          version: 4,
+          onCreate: _createDb,
+          onUpgrade: _onUpgradeDB,
+        ),
+      );
+    } else {
+      todoDatabase = openDatabase(path,
+          version: 4, onCreate: _createDb, onUpgrade: _onUpgradeDB);
+    }
 
     //mengembalikan nilai object sebagai hasil dari fungsinya
     return todoDatabase;
@@ -174,7 +193,10 @@ class DbHelper {
   }
 
   Future<List<FamilyEvaluation>> selectFamilyEvaluationByDateRange(
-      String firstDate, String lastDate,int childId,) async {
+    String firstDate,
+    String lastDate,
+    int childId,
+  ) async {
     final db = await initDb();
     final result = await db.query(
       EvaluationQuery.TABLE_NAME,
