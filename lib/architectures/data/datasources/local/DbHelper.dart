@@ -30,7 +30,7 @@ class DbHelper {
     //untuk menentukan nama database dan lokasi yg dibuat
     String path = "";
     if (kIsWeb) {
-      path = 'santriku.db';
+      path = 'contact.db';
     } else {
       Directory directory = await getApplicationDocumentsDirectory();
       path = directory.path + 'contact.db';
