@@ -97,7 +97,7 @@ class _HomePageState extends State<HomePage> {
                                         "assets/images/online_tech.png")),
                                 Padding(
                                   padding: const EdgeInsets.only(right: 16.0),
-                                  child: Text("Pemanfaatan Gadget",
+                                  child: Text("Penggunaan Gadget",
                                       style: TextStyle(
                                         fontFamily: 'Montserrat',
                                         fontSize: 18,
@@ -137,7 +137,7 @@ class _HomePageState extends State<HomePage> {
                                         "assets/images/book_lover.png")),
                                 Padding(
                                   padding: const EdgeInsets.only(right: 16.0),
-                                  child: Text("Tips & Solusi",
+                                  child: Text("Solusi & Tips",
                                       style: TextStyle(
                                         fontFamily: 'Montserrat',
                                         fontSize: 18,

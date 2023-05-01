@@ -36,9 +36,9 @@ class DbHelper {
       path = directory.path + 'contact.db';
     }
     //create, read databases
-    var factory = databaseFactoryFfiWeb;
     late Future<Database> todoDatabase;
     if (kIsWeb) {
+      var factory = databaseFactoryFfiWeb;
       todoDatabase = factory.openDatabase(
         path,
         options: OpenDatabaseOptions(

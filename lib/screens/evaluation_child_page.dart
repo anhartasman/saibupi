@@ -83,7 +83,8 @@ class evaluation_child_page extends StatelessWidget {
                             format: Format.hex,
                             luminosity: Luminosity.dark,
                             colorType: ColorType.pink,
-                            count: memberList.length,
+                            count:
+                                memberList.length > 1 ? memberList.length : 10,
                           );
                           var colors = RandomColor.getColor(options);
                           Options options2 = Options(
@@ -110,6 +111,7 @@ class evaluation_child_page extends StatelessWidget {
                               if (memberList.length > secondIdx) {
                                 child2 = memberList[secondIdx];
                               }
+                              debugPrint("Warna pertama ${colors[1]}");
                               return Row(
                                 children: [
                                   if (child1 != null)
