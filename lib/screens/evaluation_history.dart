@@ -100,8 +100,15 @@ class evaluation_history extends StatelessWidget {
                                   .where((element) =>
                                       DateTime.parse(element.date) == theDate)
                                   .toList();
-                              return _statisticData(
-                                  theDate, theDateData.length);
+                              int jumData = 0;
+                              if (theDateData.isNotEmpty) {
+                                jumData = theDateData[0]
+                                    .answers
+                                    .where((element) => element == 1)
+                                    .toList()
+                                    .length;
+                              }
+                              return _statisticData(theDate, jumData);
                             }),
                             xValueMapper: (_statisticData sales, _) =>
                                 sales.date.toTanggal("EEE, dd"),

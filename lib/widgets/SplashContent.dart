@@ -23,16 +23,16 @@ class SplashContent extends StatelessWidget {
           child: Align(
             alignment: Alignment.centerLeft,
             child: Container(
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 16,
                 vertical: 8,
               ),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 borderRadius:
                     BorderRadius.horizontal(right: Radius.circular(18)),
                 color: Color(0xFF455A64),
               ),
-              child: Text("Aplikasi Ibu Pintar",
+              child: const Text("Aplikasi Ayah Ibu Pintar",
                   style: TextStyle(
                     fontFamily: 'Montserrat',
                     fontSize: 18,
@@ -47,16 +47,16 @@ class SplashContent extends StatelessWidget {
           child: Align(
             alignment: Alignment.centerRight,
             child: Container(
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 16,
                 vertical: 8,
               ),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 borderRadius:
                     BorderRadius.horizontal(left: Radius.circular(18)),
                 color: Color(0xFF455A64),
               ),
-              child: Text("Mendampingi Anak di Era digital",
+              child: const Text("Mendampingi Anak di Era digital",
                   style: TextStyle(
                     fontFamily: 'Montserrat',
                     fontSize: 18,
@@ -69,6 +69,14 @@ class SplashContent extends StatelessWidget {
         Image.asset(
           "assets/images/pana.png",
           height: appHeight * 0.4,
+        ),
+        const Padding(
+          padding: EdgeInsets.only(top: 16.0),
+          child: Text("Versi 1.2.1",
+              style: TextStyle(
+                fontFamily: 'Montserrat',
+                color: Colors.black,
+              )),
         ),
       ],
     );
