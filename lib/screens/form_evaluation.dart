@@ -159,7 +159,7 @@ class _form_evaluationState extends State<form_evaluation> {
                             controller: _etTanggal,
                             validator: FormBuilderValidators.compose(
                               [
-                                FormBuilderValidators.required(context),
+                                FormBuilderValidators.required(),
                               ],
                             ),
                             style: new TextStyle(

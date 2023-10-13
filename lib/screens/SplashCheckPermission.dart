@@ -29,10 +29,6 @@ class _SplashCheckPermissionState extends State<SplashCheckPermission> {
   String progressErrorMessage = "";
   List<IzinAplikasi> permission_list = [
     IzinAplikasi(
-      permission: Permission.storage,
-      nama: "Mengakses penyimpanan",
-    ),
-    IzinAplikasi(
       permission: Permission.camera,
       nama: "Mengakses kamera",
     ),

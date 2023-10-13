@@ -162,7 +162,7 @@ class _form_childState extends State<form_child> {
                             controller: _etName,
                             decoration: text_field_abu,
                             validator: FormBuilderValidators.compose([
-                              FormBuilderValidators.required(context),
+                              FormBuilderValidators.required(),
                             ]),
                             keyboardType: TextInputType.text,
                             style: new TextStyle(
@@ -196,7 +196,7 @@ class _form_childState extends State<form_child> {
                             inputFormatters: [InputDateFormatter("")],
                             validator: FormBuilderValidators.compose(
                               [
-                                FormBuilderValidators.required(context),
+                                FormBuilderValidators.required(),
                               ],
                             ),
                             style: new TextStyle(
@@ -226,7 +226,7 @@ class _form_childState extends State<form_child> {
                             controller: _etLike,
                             decoration: text_field_abu,
                             validator: FormBuilderValidators.compose([
-                              FormBuilderValidators.required(context),
+                              FormBuilderValidators.required(),
                             ]),
                             keyboardType: TextInputType.text,
                             style: new TextStyle(
@@ -256,7 +256,7 @@ class _form_childState extends State<form_child> {
                             controller: _etNotLike,
                             decoration: text_field_abu,
                             validator: FormBuilderValidators.compose([
-                              FormBuilderValidators.required(context),
+                              FormBuilderValidators.required(),
                             ]),
                             keyboardType: TextInputType.text,
                             style: new TextStyle(
@@ -289,7 +289,7 @@ class _form_childState extends State<form_child> {
                             controller: _etChildRank,
                             decoration: text_field_abu,
                             validator: FormBuilderValidators.compose([
-                              FormBuilderValidators.required(context),
+                              FormBuilderValidators.required(),
                             ]),
                             keyboardType: TextInputType.number,
                             style: new TextStyle(
